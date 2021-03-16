@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Projekan</string>
+    <string name="login">Login</string>
+    <string name="lets_manage">Let’s manage your projects</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="see_your_project">See your projects here</string>
+    <string name="deadline">Deadline:</string>
+    <string name="this_week_deadline">This week deadlines</string>
+    <string name="my_projects">My Projects</string>
+    <string name="see_more">See more</string>
+    <string name="hello_user">Hi, %s</string>
+    <string name="add_project">Add project</string>
+    <string name="title">Title</string>
+    <string name="desc">Description</string>
+    <string name="platform">Platform</string>
+    <string name="category">Category</string>
+    <string name="deadline_input">Deadline</string>
+    <string name="project_icon">Project Icon</string>
+    <string name="add_project_icon">Add project icon</string>
+    <string name="done">Done</string>
+    <string name="please_wait">Please Wait</string>
+    <string name="no_data">No data</string>
+    <string name="add_your_projects">Let\'s add your projects</string>
+    <string name="tasks">Tasks</string>
+    <string name="progress_text">%d%%</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="confirm_message">Are you sure you want to delete this one?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="add_task">Add Task</string>
+    <string name="add_some_tasks">Let\'s add some tasks</string>
+    <string name="deleting_project">Deleting project...</string>
+    <string name="you_are_offline">You are offline</string>
+</resources>

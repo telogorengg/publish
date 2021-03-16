@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.activity.MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Header Background -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageView"
+                android:layout_width="match_parent"
+                android:layout_height="370dp"
+                android:background="@drawable/background_header_home"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Username -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/helloUserTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Hi, George" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/greetingsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/see_your_project"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/helloUserTv" />
+
+            <!-- User Avatar -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userAvaIv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@mipmap/ic_launcher" />
+
+            <!-- This week deadline -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/this_week_deadline"
+                android:textColor="@android:color/white"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/greetingsTv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/seeMoreTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/see_more"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userAvaIv" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/deadlinedProjectsRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:clipToPadding="false"
+                android:scrollbars="horizontal"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2"
+                tools:visibility="invisible" />
+
+            <!-- No Data (Illustration) -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/noDataIv"
+                android:layout_width="170dp"
+                android:layout_height="155dp"
+                android:layout_marginTop="15dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/illustration_no_data"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/noDataTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/no_data"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/noDataIv" />
+
+            <!-- My Projects -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/my_projects"
+                android:textColor="@android:color/black"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/myProjectsRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="10dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatTextView5"
+                tools:listitem="@layout/item_my_project" />
+
+            <!-- Let's add your projects (Illustration) -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/addYourProjectsIv"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:src="@drawable/illustration_add_project"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatTextView5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/addYourProjectsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/add_your_projects"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addYourProjectsIv"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <!-- You are offline (Illustration) -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/youAreOfflineIv"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/illustration_offline"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatTextView5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/youAreOfflineTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/you_are_offline"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/youAreOfflineIv"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <!-- Add Project -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/addProject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_add"
+                android:contentDescription="@string/add_project"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"
+                app:fabCustomSize="40dp"
+                app:backgroundTint="@color/colorPrimary"
+                app:tint="@android:color/white"
+                app:elevation="0dp" />
+
+            <!-- Shimmer Layout -->
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <include layout="@layout/shimmer_home" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
